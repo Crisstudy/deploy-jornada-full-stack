@@ -1,0 +1,1 @@
+const URI = "mongodb+srv://cristinafigueiredosaraiva:qojI71xVU2aV8UKC@cluster0.eqpx14z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
