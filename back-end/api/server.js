@@ -8,17 +8,22 @@ import { songsArray } from "../../front-end/src/assets/database/songs.js"
 const app = express();
 const PORT = 3001;
 
-app.get("/", (request, response) => {
+app.use(cors());
+// app.use(express.json());
+
+app.get("/api/", (request, response) => {
     response.send("Só vamos trabalhar com os endpoints '/artist'e '/songs' ");
 });
 
-app.get("/artists", (request, response) => {
+app.get("/api/artists", (request, response) => {
     response.send(artistArray);
 });
 
-app.get("/songs", (request, response) => {
+app.get("/api/songs", (request, response) => {
     response.send(songsArray);
 });
+
+app.use(express.static('../../front-end/dist'))
 
 app.listen(PORT, () => {
     console.log(`Servidor está escutando na porta ${PORT}`)
